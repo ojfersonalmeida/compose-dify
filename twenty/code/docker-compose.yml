@@ -26,7 +26,6 @@ services:
       SERVER_URL: ${SERVER_URL}
       FRONT_BASE_URL: ${FRONT_BASE_URL:-$SERVER_URL}
       REDIS_URL: ${REDIS_URL:-redis://localhost:6379}
-      REDIS_HOST: ${REDIS_HOST}
       
       ENABLE_DB_MIGRATIONS: "true"
 
@@ -36,9 +35,6 @@ services:
       STORAGE_S3_NAME: ${STORAGE_S3_NAME}
       STORAGE_S3_ENDPOINT: ${STORAGE_S3_ENDPOINT}
       
-      ACCESS_TOKEN_SECRET: ${ACCESS_TOKEN_SECRET}
-      LOGIN_TOKEN_SECRET: ${LOGIN_TOKEN_SECRET}
-      REFRESH_TOKEN_SECRET: ${REFRESH_TOKEN_SECRET}
       APP_SECRET: ${APP_SECRET}
     depends_on:
       change-vol-ownership:
@@ -60,7 +56,6 @@ services:
       SERVER_URL: ${SERVER_URL}
       FRONT_BASE_URL: ${FRONT_BASE_URL:-$SERVER_URL}
       REDIS_URL: ${REDIS_URL:-redis://localhost:6379}
-      REDIS_HOST: ${REDIS_HOST}
 
       ENABLE_DB_MIGRATIONS: "false" # it already runs on the server
 
@@ -68,9 +63,7 @@ services:
       STORAGE_S3_REGION: ${STORAGE_S3_REGION}
       STORAGE_S3_NAME: ${STORAGE_S3_NAME}
       STORAGE_S3_ENDPOINT: ${STORAGE_S3_ENDPOINT}
-      ACCESS_TOKEN_SECRET: ${ACCESS_TOKEN_SECRET}
-      LOGIN_TOKEN_SECRET: ${LOGIN_TOKEN_SECRET}
-      REFRESH_TOKEN_SECRET: ${REFRESH_TOKEN_SECRET}
+      
       APP_SECRET: ${APP_SECRET}
     depends_on:
       db:
